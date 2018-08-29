@@ -2,6 +2,7 @@
 
 namespace FondOfSpryker\Yves\DiscountWidget\Handler;
 
+use ArrayObject;
 use Generated\Shared\Transfer\DiscountTransfer;
 use Generated\Shared\Transfer\QuoteTransfer;
 use SprykerShop\Yves\DiscountWidget\Handler\VoucherHandler as SprykerShopVoucherHandler;
@@ -45,7 +46,7 @@ class VoucherHandler extends SprykerShopVoucherHandler
 
     protected function removeExistingDiscount(QuoteTransfer $quoteTransfer): QuoteTransfer
     {
-        $quoteTransfer->setVoucherDiscounts(new \ArrayObject());
+        $quoteTransfer->setVoucherDiscounts(new ArrayObject());
 
         return $quoteTransfer;
     }

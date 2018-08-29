@@ -19,7 +19,6 @@ class VoucherController extends SprykerShopVoucherController
      */
     public function addAction(Request $request)
     {
-
         $form = $this->getFactory()
             ->getCartVoucherForm()
             ->handleRequest($request);

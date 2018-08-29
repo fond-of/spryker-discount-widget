@@ -2,6 +2,7 @@
 
 namespace FondOfSpryker\Yves\DiscountWidget\Plugin\CartPage;
 
+use ArrayObject;
 use Pyz\Yves\CartPage\Dependency\Plugin\DiscountWidget\DiscountVoucherFormWidgetPluginInterface;
 use Spryker\Yves\Kernel\Dependency\Plugin\WidgetPluginInterface;
 use Spryker\Yves\Kernel\Widget\AbstractWidgetPlugin;
@@ -13,8 +14,10 @@ class DiscountVoucherFormWidgetPlugin extends AbstractWidgetPlugin implements Wi
 {
     /**
      * @param \ArrayObject|null $data
+     *
+     * @return void
      */
-    public function initialize(?\ArrayObject $data): void
+    public function initialize(ArrayObject $data): void
     {
         $voucherForm = $this->getFactory()
             ->getCartVoucherForm();
@@ -43,4 +46,3 @@ class DiscountVoucherFormWidgetPlugin extends AbstractWidgetPlugin implements Wi
         return '@DiscountWidget/views/cart-discount-voucher-form/cart-discount-voucher-form.twig';
     }
 }
-
