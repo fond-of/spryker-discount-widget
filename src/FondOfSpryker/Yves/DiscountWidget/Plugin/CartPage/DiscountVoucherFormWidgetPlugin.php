@@ -17,7 +17,7 @@ class DiscountVoucherFormWidgetPlugin extends AbstractWidgetPlugin implements Wi
      *
      * @return void
      */
-    public function initialize(ArrayObject $data): void
+    public function initialize(?\ArrayObject $data): void
     {
         $voucherForm = $this->getFactory()
             ->getCartVoucherForm();
