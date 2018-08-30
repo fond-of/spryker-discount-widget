@@ -3,7 +3,7 @@
 namespace FondOfSpryker\Yves\DiscountWidget\Plugin\CartPage;
 
 use ArrayObject;
-use Pyz\Yves\CartPage\Dependency\Plugin\DiscountWidget\DiscountVoucherFormWidgetPluginInterface;
+use FondOfSpryker\Yves\CartPage\Dependency\Plugin\DiscountWidget\DiscountVoucherFormWidgetPluginInterface;
 use Spryker\Yves\Kernel\Dependency\Plugin\WidgetPluginInterface;
 use Spryker\Yves\Kernel\Widget\AbstractWidgetPlugin;
 
