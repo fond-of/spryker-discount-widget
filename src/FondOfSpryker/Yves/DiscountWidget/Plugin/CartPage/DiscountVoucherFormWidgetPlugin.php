@@ -2,7 +2,6 @@
 
 namespace FondOfSpryker\Yves\DiscountWidget\Plugin\CartPage;
 
-use ArrayObject;
 use FondOfSpryker\Yves\CartPage\Dependency\Plugin\DiscountWidget\DiscountVoucherFormWidgetPluginInterface;
 use Spryker\Yves\Kernel\Dependency\Plugin\WidgetPluginInterface;
 use Spryker\Yves\Kernel\Widget\AbstractWidgetPlugin;
@@ -13,8 +12,8 @@ use Spryker\Yves\Kernel\Widget\AbstractWidgetPlugin;
 class DiscountVoucherFormWidgetPlugin extends AbstractWidgetPlugin implements WidgetPluginInterface, DiscountVoucherFormWidgetPluginInterface
 {
     /**
-     * @param \ArrayObject|null $data
-     *
+     * @param  \ArrayObject|null  $data
+     * 
      * @return void
      */
     public function initialize(?\ArrayObject $data): void
