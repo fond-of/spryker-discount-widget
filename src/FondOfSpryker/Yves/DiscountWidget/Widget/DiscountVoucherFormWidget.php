@@ -1,23 +1,22 @@
 <?php
 
-namespace FondOfSpryker\Yves\DiscountWidget\Plugin\CartPage;
+namespace FondOfSpryker\Yves\DiscountWidget\Widget;
 
-use FondOfSpryker\Yves\CartPage\Dependency\Plugin\DiscountWidget\DiscountVoucherFormWidgetPluginInterface;
-use Spryker\Yves\Kernel\Dependency\Plugin\WidgetPluginInterface;
-use Spryker\Yves\Kernel\Widget\AbstractWidgetPlugin;
+use Spryker\Yves\Kernel\Widget\AbstractWidget;
 
 /**
- * @deprecated use FondOfSpryker\Yves\DiscountWidget\Widget\DiscountVoucherFormWidget instead!
  * @method \FondOfSpryker\Yves\DiscountWidget\DiscountWidgetFactory getFactory()
  */
-class DiscountVoucherFormWidgetPlugin extends AbstractWidgetPlugin implements WidgetPluginInterface, DiscountVoucherFormWidgetPluginInterface
+class DiscountVoucherFormWidget extends AbstractWidget
 {
+    public const NAME = 'DiscountVoucherFormWidgetPlugin';
+
     /**
-     * @param  \ArrayObject|null  $data
+     * DiscountVoucherFormWidget constructor.
      *
-     * @return void
+     * @param  \ArrayObject|null  $data
      */
-    public function initialize(?\ArrayObject $data): void
+    public function __construct(?\ArrayObject $data)
     {
         $voucherForm = $this->getFactory()
             ->getCartVoucherForm();
@@ -37,8 +36,6 @@ class DiscountVoucherFormWidgetPlugin extends AbstractWidgetPlugin implements Wi
     }
 
     /**
-     * @api
-     *
      * @return string
      */
     public static function getTemplate(): string
