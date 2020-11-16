@@ -24,7 +24,7 @@ class VoucherHandler extends SprykerShopVoucherHandler
         $quoteTransfer->addVoucherDiscount($voucherDiscount);
 
         $quoteTransfer = $this->calculationClient->recalculate($quoteTransfer);
-        $this->addFlashMessages($quoteTransfer, $voucherCode);
+        $this->setFlashMessagesFromLastZedRequest($this->calculationClient);
 
         $this->quoteClient->setQuote($quoteTransfer);
     }
@@ -54,20 +54,5 @@ class VoucherHandler extends SprykerShopVoucherHandler
         $quoteTransfer->setVoucherDiscounts(new ArrayObject());
 
         return $quoteTransfer;
-    }
-
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param string $voucherCode
-     *
-     * @return void
-     */
-    protected function addFlashMessages($quoteTransfer, $voucherCode)
-    {
-        if ($this->isVoucherFromPromotionDiscount($quoteTransfer, $voucherCode)) {
-            return;
-        }
-
-        $this->setFlashMessagesFromLastZedRequest($this->calculationClient);
     }
 }
