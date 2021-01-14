@@ -22,7 +22,7 @@ class DiscountVoucherFormWidget extends AbstractWidget
             ->getCartVoucherForm();
 
         $this->addParameter('voucherForm', $voucherForm->createView());
-        $this->addParameter('discount', $data[0]);
+        $this->addParameter('discount', $data[0] ?? null);
     }
 
     /**
